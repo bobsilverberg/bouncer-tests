@@ -25,7 +25,7 @@ class TestRedirects(Base):
         url = testsetup.base_url
         response = self._head_request(url, params=param)
 
-        Assert.equal(response.status_code, requests.codes.not_found,
+        Assert.equal(response.status_code, 1,
                      self.response_info_failure_message(url, param, response))
 
         parsed_url = urlparse(response.url)
